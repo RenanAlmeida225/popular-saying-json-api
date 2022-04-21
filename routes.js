@@ -1,9 +1,7 @@
 const router = require('express').Router();
 
-router.route('/teste').get((req, res) => {
-	res.status(200).json({
-		message: 'OK',
-	});
-});
+const SayingsContoller = require('./controllers/SayingsController.js');
+
+router.route('/teste').get(SayingsContoller.teste);
 
 module.exports = router;
