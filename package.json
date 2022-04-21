@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/RenanAlmeida225/popular-saying-json-api#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0"
   }
 }
