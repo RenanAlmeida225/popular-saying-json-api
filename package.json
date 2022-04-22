@@ -1,27 +1,27 @@
 {
-  "name": "popular-saying-json-api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RenanAlmeida225/popular-saying-json-api.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RenanAlmeida225/popular-saying-json-api/issues"
-  },
-  "homepage": "https://github.com/RenanAlmeida225/popular-saying-json-api#readme",
-  "dependencies": {
-    "express": "^4.17.3",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
-  }
+	"name": "popular-saying-json-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node ./src/index.js",
+		"dev": "nodemon ./src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RenanAlmeida225/popular-saying-json-api.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/RenanAlmeida225/popular-saying-json-api/issues"
+	},
+	"homepage": "https://github.com/RenanAlmeida225/popular-saying-json-api#readme",
+	"dependencies": {
+		"express": "^4.17.3",
+		"mysql2": "^2.3.3",
+		"sequelize": "^6.19.0"
+	}
 }
