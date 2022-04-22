@@ -5,8 +5,9 @@ const GetSayingsController = require('./controllers/GetSayingsController.js');
 // importa o controle dos ditados
 const SayingsContoller = require('./controllers/SayingsController.js');
 
-//router.route('/').get(GetSayingsController.getRandomSaying);
+router.route('/').get(GetSayingsController.getRandomSaying);
 router.route('/:id').get(GetSayingsController.getIdSaying);
+router.route('/search/:query').get(GetSayingsController.getSearchSaying);
 
 router.route('/create-saying').post(SayingsContoller.createSayings);
 

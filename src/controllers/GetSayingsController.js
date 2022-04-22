@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize, Op } = require('sequelize');
 const Sayings = require('../models/Sayings.js');
 
 module.exports = {
@@ -37,6 +37,40 @@ module.exports = {
 			return res.status(200).json({
 				saying,
 			});
-		} catch (error) {}
+		} catch (error) {
+			return res.status(500).json({
+				type: 'error',
+				message: error,
+			});
+		}
+	},
+
+	async getSearchSaying(req, res) {
+		const query = req.params.query;
+
+		try {
+			const saying = await Sayings.findAll({
+				where: {
+					sayings: { [Op.like]: `%${query}%` },
+				},
+				attributes: { exclude: ['createdAt', 'updatedAt'] },
+			});
+
+			if (!saying.length) {
+				return res.status(404).json({
+					type: 'error',
+					message: 'Popular sayings not found!',
+				});
+			}
+
+			return res.status(200).json({
+				saying,
+			});
+		} catch (error) {
+			return res.status(500).json({
+				type: 'error',
+				message: error,
+			});
+		}
 	},
 };
