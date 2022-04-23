@@ -1,9 +1,14 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('popular_saying', 'root', '', {
-	host: 'localhost',
-	dialect: 'mysql',
-});
+const sequelize = new Sequelize(
+	process.env.DB,
+	process.env.DB_USERNAME,
+	process.env.DB_PASSWORD,
+	{
+		host: process.env.DB_HOST,
+		dialect: 'mysql',
+	}
+);
 
 try {
 	sequelize.authenticate();
