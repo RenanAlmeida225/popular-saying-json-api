@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use('/api/popular-saying', routes);
+app.use('/V1/api/popular-saying', routes);
 
 // Faz a conexão com o banco de dados
 conn.sync()
