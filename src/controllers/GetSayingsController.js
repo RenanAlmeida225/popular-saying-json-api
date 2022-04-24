@@ -1,8 +1,8 @@
 const { Sequelize, Op } = require('sequelize');
 const Sayings = require('../models/Sayings.js');
 
-module.exports = {
-	async getRandomSaying(req, res) {
+module.exports = class GetSayingsController {
+	static async getRandomSaying(req, res) {
 		try {
 			const saying = await Sayings.findOne({
 				order: Sequelize.literal('rand()'),
@@ -18,9 +18,9 @@ module.exports = {
 				message: error,
 			});
 		}
-	},
+	}
 
-	async getIdSaying(req, res) {
+	static async getIdSaying(req, res) {
 		const id = req.params.id;
 
 		try {
@@ -43,9 +43,9 @@ module.exports = {
 				message: error,
 			});
 		}
-	},
+	}
 
-	async getSearchSaying(req, res) {
+	static async getSearchSaying(req, res) {
 		const query = req.params.query;
 
 		try {
@@ -72,5 +72,5 @@ module.exports = {
 				message: error,
 			});
 		}
-	},
+	}
 };

@@ -1,15 +1,17 @@
 const router = require('express').Router();
 
+// importa os controles dos ditados
 const GetSayingsController = require('./controllers/GetSayingsController.js');
-
-// importa o controle dos ditados
 const SayingsContoller = require('./controllers/SayingsController.js');
 
 router.route('/').get(GetSayingsController.getRandomSaying);
 router.route('/:id').get(GetSayingsController.getIdSaying);
 router.route('/search/:query').get(GetSayingsController.getSearchSaying);
 
-router.route('/create-saying').post(SayingsContoller.createSayings);
-router.route('/update-saying/:id').put(SayingsContoller.updateSayings);
+router.route('/sayings').post(SayingsContoller.createSayings);
+router
+	.route('/sayings/:id')
+	.put(SayingsContoller.updateSayings)
+	.delete(SayingsContoller.deleteSayings);
 
 module.exports = router;
